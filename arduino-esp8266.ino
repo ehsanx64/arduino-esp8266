@@ -10,6 +10,7 @@
 //#include "RgbShield.h"
 #include "Wifi.h"
 #include "WebServer.h"
+#include "SoftwareSerial.h"
 
 /*
  * Configuration
@@ -46,6 +47,10 @@ void setup() {
 
 #if WEBSERVER_ENABLED
     WebServer_Setup();
+#endif
+
+#if SOFTWARESERIAL_ENABLED
+    SoftwareSerial_Setup();
 #endif
 }
 
