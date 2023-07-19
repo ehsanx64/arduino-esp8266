@@ -9,6 +9,7 @@
  */
 //#include "RgbShield.h"
 #include "Wifi.h"
+#include "WebServer.h"
 
 /*
  * Configuration
@@ -43,13 +44,23 @@ void setup() {
     Wifi_Setup();
 #endif
 
-
+#if WEBSERVER_ENABLED
+    WebServer_Setup();
+#endif
 }
 
 void loop() {
 #if RGB_SHIELD_ENABLED
     RgbShield_colorLoop();
-#endif   
+#endif
+
+#if WIFI_ENABLED
+    Wifi_Loop();
+#endif
+   
+#if WEBSERVER_ENABLED
+    WebServer_Loop();
+#endif
 
     delay(GENERAL_DELAY);
 }

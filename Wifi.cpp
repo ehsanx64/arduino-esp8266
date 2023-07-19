@@ -37,3 +37,7 @@ void Wifi_Setup() {
         Serial.println("MDNS Name: " + String(MDNS_NAME));
     }
 }
+
+void Wifi_Loop() {
+    MDNS.update();
+}

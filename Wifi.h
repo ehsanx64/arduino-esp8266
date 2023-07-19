@@ -1,13 +1,11 @@
 #ifndef WIFI_DEFINED
 #define WIFI_DEFINED
 
-
-
 /*
  * Configuration
  */
 #define WIFI_ENABLED true
-#define WIFI_AP_ENABLED true
+#define WIFI_AP_ENABLED false
 
 // Wifi access point credentials
 #define WIFI_AP_ESSID "Electrofruit"
@@ -22,5 +20,6 @@
 
 // Function prototypes (global)
 void Wifi_Setup();
+void Wifi_Loop();
 
 #endif
