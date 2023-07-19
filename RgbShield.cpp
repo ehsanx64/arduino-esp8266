@@ -16,12 +16,12 @@ int getDelay() {
 }
 
 // Main application for now
-void rgb_shield_color_loop() {
+void RgbShield_colorLoop() {
     int i = 0;
     
     // Green loop
     for (i = 0; i < COLOR_MAX; i++) {
-#if LOGGING
+#if IS_LOGGING
         Serial.println("Adding green: " + String(i));
 #endif
         setColor(led.Color(i, 0, 0));
@@ -30,7 +30,7 @@ void rgb_shield_color_loop() {
 
     // Red loop
     for (i = 0; i < COLOR_MAX; i++) {
-#if LOGGING
+#if IS_LOGGING
         Serial.println("Adding red: " + String(i));
 #endif
         setColor(led.Color(COLOR_MAX, i, 0));
@@ -39,7 +39,7 @@ void rgb_shield_color_loop() {
 
     // Blue loop
     for (i = 0; i < COLOR_MAX; i++) {
-#if LOGGING
+#if IS_LOGGING
         Serial.println("Adding blue: " + String(i));
 #endif
         setColor(led.Color(COLOR_MAX, COLOR_MAX, i));
@@ -48,7 +48,7 @@ void rgb_shield_color_loop() {
 
     // Remove green
     for (i = COLOR_MAX; i >= 0; i--) {
-#if LOGGING
+#if IS_LOGGING
         Serial.println("Removing green: " + String(i));
 #endif
         setColor(led.Color(i, COLOR_MAX, COLOR_MAX));
@@ -57,7 +57,7 @@ void rgb_shield_color_loop() {
 
     // Remove red
     for (i = COLOR_MAX; i >= 0; i--) {
-#if LOGGING
+#if IS_LOGGING
         Serial.println("Removing red: " + String(i));
 #endif
         setColor(led.Color(0, i, COLOR_MAX));
@@ -65,16 +65,17 @@ void rgb_shield_color_loop() {
     }
 
     // Remove blue
-#if LOGGING
+#if IS_LOGGING
         Serial.println("Removing blue: " + String(i));
 #endif
+
     for (i = COLOR_MAX; i >= 0; i--) {
         setColor(led.Color(0, 0, i));
         delay(getDelay());
     }
 }
 
-void rgb_shield_setup() {
+void RgbShield_Setup() {
     led.begin();
     led.show();
 }

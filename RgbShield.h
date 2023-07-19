@@ -1,7 +1,7 @@
 #ifndef RGB_SHIELD_DEFINED
 #define RGB_SHIELD_DEFINED
 
-#define WITH_RGB_SHIELD true
+#define RGB_SHIELD_ENABLED true
 
 // Max value for each item on color object
 #define COLOR_MAX 10
@@ -10,7 +10,7 @@
 #define COLOR_DELAY 100
 
 // Function prototypes (global)
-void rgb_shield_setup();
-void rgb_shield_color_loop();
+void RgbShield_Setup();
+void RgbShield_colorLoop();
 
 #endif
