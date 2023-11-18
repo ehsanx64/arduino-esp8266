@@ -7,4 +7,4 @@ ESP8266 Development using Arduino Framework
 - [x] Support for over-the-air (OTA) programming
 - [x] Support for WiFi connectivity both as a station and as an access-point
 - [ ] Basic web based management panel
-- [ ] MQTT pub/sub support
+- [x] MQTT pub/sub support

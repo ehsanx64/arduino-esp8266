@@ -9,7 +9,8 @@
  */
 //#include "RgbShield.h"
 #include "Wifi.h"
-#include "Ota.h"
+//#include "Ota.h"
+#include "Mqtt.h"
 #include "WebServer.h"
 #include "SoftwareSerial.h"
 
@@ -50,6 +51,10 @@ void setup() {
     Ota_Setup();
 #endif
 
+#if MQTT_ENABLED
+    Mqtt_Setup();
+#endif
+
 #if WEBSERVER_ENABLED
     WebServer_Setup();
 #endif
@@ -70,6 +75,10 @@ void loop() {
 
 #if OTA_ENABLED
     Ota_Loop();
+#endif
+
+#if MQTT_ENABLED
+    Mqtt_Loop();
 #endif
    
 #if WEBSERVER_ENABLED
