@@ -9,6 +9,7 @@
  */
 //#include "RgbShield.h"
 #include "Wifi.h"
+#include "Ota.h"
 #include "WebServer.h"
 #include "SoftwareSerial.h"
 
@@ -45,6 +46,10 @@ void setup() {
     Wifi_Setup();
 #endif
 
+#if OTA_ENABLED
+    Ota_Setup();
+#endif
+
 #if WEBSERVER_ENABLED
     WebServer_Setup();
 #endif
@@ -61,6 +66,10 @@ void loop() {
 
 #if WIFI_ENABLED
     Wifi_Loop();
+#endif
+
+#if OTA_ENABLED
+    Ota_Loop();
 #endif
    
 #if WEBSERVER_ENABLED
