@@ -11,3 +11,4 @@ ESP8266 Development using Arduino Framework
 - [x] MQTT pub/sub support
 - [ ] Websockets support
 - [ ] Support for I2C communications in both master and slave modes
+- [ ] Support for SSD1306 OLED display
